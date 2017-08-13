@@ -1,28 +1,34 @@
 # Dateformvalidation
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.7.
+This a test given to Salim EL Haddad by One of the two founders of the start-up Nimble ways Mr.Antoine ORY-LAMBALLE
+## Requirements
 
-## Development server
+             =>create a web site using angular4
+             =>Specification:->Two date fields and a button to submit.
+                             -> When both the two dates are valid.It should display the number
+                                of days between the two dates.
+                             -> Styling the web site (User experience)
+## Project Description
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+the project consists of creating two input date fields,a start date and an end date.
+The start date should be inferior to the end date.So a function called "displayMessagesWhenTwoDatesValid"
+is used to make sure it's the case.it's also required to check if both dates are valid,
+otherwaise a message is diplayed in the page explaining the reason of the error.If the
+dates are both valid,then a message is displayed specifying the number of dates between
+the the two dates.
+## Details
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Project structure:
+        the project is created using angular-cli .It contains one component
+        which is the app-comonent and one service which check for validation of the two dates.
+Modules used:
+* MomentModule : It is a module containing a variety of pipes . In the context of this
+                 project,it's used to compute the difference of days between the two dates entered
+                 by the user.
+* RoundPipe: used to round a float number to its closest integer.
+* Angular Material 2 : used for designing the user experience.In the context of this project
+                       ,BrowserAnimationsModule,MdButtonModule,MdDatepickerModule,MdInputModule
+                       and MdNativeDateModule.Please refer to the documentation to see their
+                       utilities in details:"https://material.angular.io/components"
