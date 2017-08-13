@@ -61,7 +61,7 @@ export class AppComponent {
 
   private displayMessagesWhenTwoDatesValid(startDate: Date, endDate: Date) {
     if (this.compareTwoDates(startDate, endDate) == -1) {
-      this.resultOfValidation = "Both dates are valid.But startDate is inferior to end Date";
+      this.resultOfValidation = "Both dates are valid.But startDate is superior to end Date";
       document.getElementById('interval').style.display = "none";
 
 
