@@ -1,16 +1,14 @@
 <!--<div>
   <app-datevalidation></app-datevalidation>
 </div>-->
-
-
   <md-input-container class="example-full-width">
-    <input mdInput [mdDatepicker]="picker1" placeholder="Choose a start date" #startDate>
+    <input mdInput [mdDatepicker]="picker1" placeholder="Choose a start date" #startDate id="start">
     <button mdSuffix [mdDatepickerToggle]="picker1"></button>
   </md-input-container>
   <md-datepicker touchUi="true" #picker1></md-datepicker>
   <span style="display:block;  width:100px;"></span>
   <md-input-container class="example-full-width">
-    <input mdInput [mdDatepicker]="picker2" placeholder="Choose an end date" #endDate>
+    <input mdInput [mdDatepicker]="picker2" placeholder="Choose an end date" #endDate id="end">
     <button mdSuffix [mdDatepickerToggle]="picker2"></button>
   </md-input-container>
   <md-datepicker touchUi="true" #picker2></md-datepicker>
@@ -19,7 +17,14 @@
   <button md-fab (click)="checkForValidationDates(startDate.value, endDate.value)"><md-icon>check</md-icon></button>
 
   <span id="isValidMessage" style="display: none;">{{resultOfValidation}}</span>
-  <span id="interval" style="display: none;">{{newEndDate | amDifference: newStartDate :'days' : true | round}} days </span>
+  <span id="interval" style="display: none;">{{newEndDate | amDifference: newStartDate  :'days' : true | round}} days </span>
+
+<!--<p>Date: <input type="date" #startDate id="start"></p>
+<p>Date: <input type="date" #endDate id="end"></p>
+<button md-fab (click)="checkForValidationDates(startDate.value, endDate.value)"><md-icon>check</md-icon></button>
+
+<span id="isValidMessage" style="display: none;">{{resultOfValidation}}</span>
+<span id="interval" style="display: none;">{{newEndDate | amDifference: newStartDate  :'days' : true | round}} days </span>-->
 
 
 

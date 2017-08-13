@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {DateValidationService} from "./services/date-validation.service";
-
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-root',
@@ -13,24 +13,25 @@ import {DateValidationService} from "./services/date-validation.service";
 })
 
 export class AppComponent {
-  dt;
+
 
   newStartDate:Date = null;
   newEndDate:Date = null;
-  resultOfValidation:string = "hello";
+  resultOfValidation:string = "";
   constructor(private dateValidationService:DateValidationService) {
-    this.dt = new Date();
+
+
 
   }
 
 
   convertStringDateToDate(startDate:string, endDate:string){
-    let start = startDate.split("/") ;
-    let end = endDate.split("/");
-    this.newStartDate = new Date(parseInt(start[2]),parseInt(start[1]) -1,parseInt(start[0]));
-    this.newEndDate = new Date(parseInt(end[2]),parseInt(end[1]) -1,parseInt(end[0]));
 
-   
+
+    this.newStartDate = moment(startDate,['DD-MM-YYYY','MM-DD-YYYY','YYYY-MM-DD']).toDate() ;
+    this.newEndDate = moment(endDate,['DD-MM-YYYY','MM-DD-YYYY','YYYY-MM-DD']).toDate() ;
+
+
   }
   compareTwoDates(startDate:Date,endDate:Date):number{
     if(startDate.getTime() > endDate.getTime())
