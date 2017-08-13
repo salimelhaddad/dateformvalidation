@@ -19,7 +19,7 @@
   <button md-fab (click)="checkForValidationDates(startDate.value, endDate.value)"><md-icon>check</md-icon></button>
 
   <span id="isValidMessage" style="display: none;">{{resultOfValidation}}</span>
-  <span id="interval" style="display: none;">{{newEndDate | amDifference: newStartDate :'days' : true | round}} days {{startDate.value}}</span>
+  <span id="interval" style="display: none;">{{newEndDate | amDifference: newStartDate :'days' : true | round}} days </span>
 
 
 

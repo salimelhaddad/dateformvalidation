@@ -43,8 +43,11 @@ export class AppComponent {
   private messageToDisplayToUser(startDate: Date, endDate: Date) {
     if (this.resultOfValidation == "bdv")
       this.displayMessagesWhenTwoDatesValid(startDate, endDate);
-    if ((this.resultOfValidation == "sdnv"))
+    if ((this.resultOfValidation == "sdnv")) {
       this.resultOfValidation = "the start date is not valid";
+      document.getElementById('interval').style.display = "none";
+    }
+
     if (this.resultOfValidation == "ednv")
       this.resultOfValidation = "the end date is not valid";
     if (this.resultOfValidation == "bdnv") {
@@ -59,6 +62,9 @@ export class AppComponent {
   private displayMessagesWhenTwoDatesValid(startDate: Date, endDate: Date) {
     if (this.compareTwoDates(startDate, endDate) == -1) {
       this.resultOfValidation = "Both dates are valid.But startDate is inferior to end Date";
+      document.getElementById('interval').style.display = "none";
+
+
 
     }
     else {
