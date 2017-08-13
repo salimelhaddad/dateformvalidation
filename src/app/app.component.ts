@@ -25,8 +25,12 @@ export class AppComponent {
 
 
   convertStringDateToDate(startDate:string, endDate:string){
-    this.newStartDate = new Date(startDate);
-    this.newEndDate = new Date(endDate);
+    let start = startDate.split("/") ;
+    let end = endDate.split("/");
+    this.newStartDate = new Date(parseInt(start[2]),parseInt(start[1]) -1,parseInt(start[0]));
+    this.newEndDate = new Date(parseInt(end[2]),parseInt(end[1]) -1,parseInt(end[0]));
+
+   
   }
   compareTwoDates(startDate:Date,endDate:Date):number{
     if(startDate.getTime() > endDate.getTime())
